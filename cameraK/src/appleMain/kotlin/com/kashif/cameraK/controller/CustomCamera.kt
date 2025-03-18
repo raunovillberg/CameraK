@@ -44,6 +44,7 @@ class CustomCameraController : NSObject(), AVCapturePhotoCaptureDelegateProtocol
             }
 
             setupPhotoOutput()
+            captureSession?.sessionPreset = AVCaptureSessionPresetPhoto
             captureSession?.commitConfiguration()
         } catch (e: CameraException) {
             cleanupSession()
